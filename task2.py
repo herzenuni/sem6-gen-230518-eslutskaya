@@ -1,9 +1,12 @@
+import itertools
 import uuid
 
+def create_uuid_gen():
+    while True:
+        yield uuid.uuid4()
 
-def uuid_generator():
-    n = uuid.uuid1()
-    print(n)
+uuid_gen = create_uuid_gen()
 
-
-uuid_generator()
+print(next(uuid_gen))
+print(next(uuid_gen))
+print(next(uuid_gen))
